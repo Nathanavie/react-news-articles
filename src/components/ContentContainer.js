@@ -73,7 +73,7 @@ class ContentContainer extends React.Component {
         <>
           <form>
           <label>Choose a country</label>
-            <select className="select-css" name="country" value={country} onChange={this.handleChange}>
+            <select className="select-css" id="test" name="country" value={country} onBlur={this.fetchData} onChange={this.handleChange}>
               <option value="ar">Argentina</option>
               <option value="au">Australia</option>
               <option value="at">Austria</option>
@@ -89,11 +89,6 @@ class ContentContainer extends React.Component {
               <option value="gb">United Kingdom</option>
               <option value="us">United States</option>
             </select>
-            <input
-              type="button"
-              value="Select"
-              onClick={this.fetchData}
-            />
           </form>
           <div className="container">{this.state.items.map (info => <Content {...info} />)}</div>
         </>
