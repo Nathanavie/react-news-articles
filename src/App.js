@@ -1,6 +1,7 @@
 import React from 'react';
+import Header from './components/Header'
 import ContentContainer from './components/ContentContainer';
-import Header from './components/Header';
+import Heading from './components/Heading'
 import './App.css';
 
 class App extends React.Component {
@@ -8,6 +9,7 @@ class App extends React.Component {
     return(
       <article>
         <Header />
+        <Heading />
         <ContentContainer />
       </article>
     )
