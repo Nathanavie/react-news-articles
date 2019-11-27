@@ -7,12 +7,21 @@ class ContentContainer extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+      country: 'gb'
     };
   }
 
+
   componentDidMount() {
-    fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=e1de0dd1b4fd47ad8340f477e90210b8')
+    this.fetchData();
+  }
+
+  fetchData = event => {
+    console.log(this.state.country)
+    let country = this.state.country
+    var link = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=e1de0dd1b4fd47ad8340f477e90210b8`
+    fetch(link)
       .then(res => res.json())
       .then(json => {
 
@@ -33,8 +42,21 @@ class ContentContainer extends React.Component {
       )
   }
 
+  handleChange = event => {
+    const { name, value } = event.target
+
+    this.setState({
+      [name]: value,
+    })
+
+  }
+
+  handlesubmit = event => {
+    this.fetchData();
+  }
+
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, items, country } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -49,6 +71,30 @@ class ContentContainer extends React.Component {
         //   ))}
         // </ul>
         <>
+          <form>
+          <label>Choose a country</label>
+            <select className="select-css" name="country" value={country} onChange={this.handleChange}>
+              <option value="ar">Argentina</option>
+              <option value="au">Australia</option>
+              <option value="at">Austria</option>
+              <option value="be">Belgium</option>
+              <option value="br">Brazil</option>
+              <option value="ca">Canada</option>
+              <option value="co">Colombia</option>
+              <option value="fr">France</option>
+              <option value="de">Germany</option>
+              <option value="hk">Hong Kong</option>
+              <option value="ie">Ireland</option>
+              <option value="it">Italy</option>
+              <option value="gb">United Kingdom</option>
+              <option value="us">United States</option>
+            </select>
+            <input
+              type="button"
+              value="Select"
+              onClick={this.fetchData}
+            />
+          </form>
           <div className="container">{this.state.items.map (info => <Content {...info} />)}</div>
         </>
       );
