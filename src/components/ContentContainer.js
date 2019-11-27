@@ -17,9 +17,11 @@ class ContentContainer extends React.Component {
     this.fetchData();
   }
 
-  fetchData = event => {
+  fetchData = (event) => {
+    console.log('test')
     console.log(this.state.country)
     let country = this.state.country
+    console.log(country)
     var link = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=e1de0dd1b4fd47ad8340f477e90210b8`
     fetch(link)
       .then(res => res.json())
@@ -49,9 +51,11 @@ class ContentContainer extends React.Component {
       [name]: value,
     })
 
+    // document.getElementById('test').blur();
   }
 
   handlesubmit = event => {
+    console.log(this.state.country)
     this.fetchData();
   }
 
@@ -63,13 +67,6 @@ class ContentContainer extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        // <ul>
-        //   {items.map(item => (
-        //     <li key={item.name}>
-        //       {item.name} {item.price}
-        //     </li>
-        //   ))}
-        // </ul>
         <>
           <form>
           <label>Choose a country</label>
@@ -89,6 +86,11 @@ class ContentContainer extends React.Component {
               <option value="gb">United Kingdom</option>
               <option value="us">United States</option>
             </select>
+            <input
+              type="button"
+              name="submit"
+              value="Retrieve News!"
+            />
           </form>
           <div className="container">{this.state.items.map (info => <Content {...info} />)}</div>
         </>

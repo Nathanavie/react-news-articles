@@ -14,7 +14,6 @@ class Content extends React.Component {
 
   render() {
     let article = this.props
-    console.log(article)
     if (article.urlToImage == null) {
       return(
         <section className="hidden" />
