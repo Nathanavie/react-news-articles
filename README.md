@@ -18,7 +18,7 @@ The API that is used within this project can be found at https://newsapi.org/.
 
 The api that was used contained the latest set of news articles posted from the US.
 
-##ToDo
+## ToDo
 
 - Add a search to allow a topic to be chosen using a word query rather than just US articles
 - Add a country selection to change the country that the api is called from
