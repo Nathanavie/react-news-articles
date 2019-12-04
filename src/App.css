@@ -1,5 +1,6 @@
 html {
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 
 .App {
@@ -82,6 +83,14 @@ img{
     max-width: 80%;
     margin: 10px 10%;
   }
+
+  div nav a {
+    width: 100%;
+  }
+
+  div nav {
+    flex-wrap: wrap;
+  }
 }
 
 .articleWording {
@@ -105,7 +114,7 @@ header {
   height: 4em;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(90deg, rgba(135,0,0,0.9587185215883228) 0%, rgba(167,8,8,0.6281863087031687) 29%, rgba(255,0,0,0.2164216028208158) 100%);
+  background: rgb(135,0,0);
 }
 
 header img {
@@ -128,7 +137,7 @@ form label {
   align-self: center;
 }
 
-form input[type="button"] {
+form button[type="button"] {
   width: 200px;
   margin-left: 20px;
   border: 1px solid #aaa;
@@ -141,12 +150,12 @@ form input[type="button"] {
   background-repeat: repeat;
 }
 
-form input[type="button"]:hover {
+form button[type="button"]:hover {
   cursor: pointer;
   background-image: linear-gradient(to bottom, #cccccc 0%, #e5e5e5 100%);
 }
 
-form input[type="button"]:focus {
+form button[type="button"]:focus {
     border-color: #aaa;
     box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
     box-shadow: 0 0 0 3px -moz-mac-focusring;
@@ -205,7 +214,7 @@ form input[type="button"]:focus {
 .heading {
   width: 80%;
   margin: 0 auto;
-  padding-top: 5rem;
+  padding-top: 8rem;
 }
 
 h1 {
@@ -221,4 +230,64 @@ h2 {
 
 .hidden {
   display: none;
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 4em;
+  box-shadow: 0px 10px 15px 6px rgb(135,0,0);
+}
+
+nav a {
+  background: rgb(135,0,0);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  width: 33.3%;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+nav a:hover {
+  background: rgb(184,0,0);
+  color: #FFFFFF;
+  border: solid 0.5px #FFFFFF;
+}
+
+.why {
+  margin: 0 auto;
+  width: 80%;
+}
+
+iframe {
+  width: 100%;
+  padding-top: 6.5rem;
+}
+
+.formBefore {
+  padding-top: 12rem;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 auto;
+}
+.formBefore label {
+  margin-bottom: 1em;
+  font-size: 30px;
+}
+.formBefore input {
+  height: 2em;
+  font-size: 40px;
+  text-transform: capitalize;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.formBefore button[type="button"]{
+  height: 3em;
+  width: 100%;
+  margin: 0;
+  font-size: 20px;
 }

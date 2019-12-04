@@ -1,5 +1,6 @@
 import React from 'react';
 import Content from './Content'
+import Heading from './Heading'
 
 class ContentContainer extends React.Component {
   constructor(props) {
@@ -68,6 +69,7 @@ class ContentContainer extends React.Component {
     } else {
       return (
         <>
+        <Heading />
           <form>
           <label>Choose a country</label>
             <select className="select-css" id="test" name="country" value={country} onBlur={this.fetchData} onChange={this.handleChange}>
@@ -86,11 +88,13 @@ class ContentContainer extends React.Component {
               <option value="gb">United Kingdom</option>
               <option value="us">United States</option>
             </select>
-            <input
+            <button
               type="button"
               name="submit"
               value="Retrieve News!"
-            />
+            >
+            Retrieve News!
+            </button>
           </form>
           <div className="container">{this.state.items.map (info => <Content {...info} />)}</div>
         </>
