@@ -18,8 +18,8 @@ class App extends React.Component {
       <div>
       <Header />
         <nav className="navbar">
-            <Link to={'/'} id="News" >See The News</Link>
-            <Link to={'/ByKeyword'} id="Why">Why I Created This</Link>
+            <Link to={'/'} id="News" >News By Country</Link>
+            <Link to={'/ByKeyword'} id="Why">News By Keyword</Link>
             <Link to={'/Portfolio'} id="Portfolio">My Portfolio Site</Link>
         </nav>
         <Switch>
