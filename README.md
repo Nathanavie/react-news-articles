@@ -8,7 +8,8 @@ To get the frontend running locally:
 
 - Clone this repo
 - `npm install` to install all req'd dependencies
-- `npm start` to start the local server (this project uses create-react-app)
+- `npm install react-router-dom` to install React Router which is requried for this project
+- `npm start` to start the local server (this project uses create-react-app) 
 
 React will start the project on port 3000 which you can access via localhost:3000.
 
