@@ -79,7 +79,7 @@ img{
     text-align:center;
 
   }
-  #root form input[type="button"] {
+  #root form button[type="button"] {
     width: 80%;
     margin-left: 10%;
   }
@@ -89,13 +89,40 @@ img{
     margin: 10px 10%;
   }
 
-  div nav a {
+  div .navbar a {
     width: 100%;
   }
 
-  div nav {
+  div .navbar {
     flex-wrap: wrap;
+    position: unset;
   }
+
+  #root .heading {
+    padding-top: 3rem;
+  }
+
+  #root .formBefore {
+    width: unset;
+    padding-top: 2rem;
+    align-items: stretch;
+  }
+
+  #root .formBefore label {
+    align-self: auto;
+  }
+
+  #root .formBefore input[type="text"] {
+    width: 99%;
+    margin: 0 0 1em 0;
+  }
+
+  #root form input[type="text"] {
+    height: 2em;
+    width: 90%;
+    margin: 0 auto;
+  }
+
 }
 
 .articleWording {
