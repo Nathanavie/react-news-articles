@@ -16,11 +16,6 @@ class ByKeyword extends React.Component {
     this.state = this.initialState
   }
 
-
-
-  componentDidMount() {
-  }
-
   fetchData = (event) => {
     if (this.state.items == undefined) {
         alert('Please fill in a value')
@@ -85,7 +80,7 @@ class ByKeyword extends React.Component {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-      return <div>
+      return <>
         <form
           className="formBefore"
           autocomplete="off"
@@ -95,6 +90,7 @@ class ByKeyword extends React.Component {
           <input
             type="text"
             name="country"
+            placeholder="Football..."
             value={country}
             onChange={this.handleChange}
             />
@@ -107,7 +103,7 @@ class ByKeyword extends React.Component {
             Retrieve News!
             </button>
         </form>
-      </div>;
+      </>;
     } else {
       return (
         <>
