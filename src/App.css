@@ -48,10 +48,15 @@ img{
   box-shadow: 0px 0px 10px rgba(135,0,0,0.9587185215883228);
 }
 
-.articleLink {
+.articleLink a {
   text-decoration: none;
   color: #000000;
+}
+
+.articleLink {
   border: solid 0.2px rgba(135,0,0,0.9587185215883228);
+  display: grid;
+  grid-template-rows: 27em 3em;
 }
 
 .articleImage {
@@ -291,4 +296,15 @@ iframe {
   width: 100%;
   margin: 0;
   font-size: 20px;
+}
+
+.source {
+  text-align: center;
+  border-top: solid 0.2px rgba(135,0,0,0.9587185215883228);
+}
+
+.source:hover {
+  background-color: rgba(135,0,0,0.9587185215883228);
+  color: #FFFFFF;
+  cursor: pointer;
 }
