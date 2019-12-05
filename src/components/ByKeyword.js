@@ -25,7 +25,6 @@ class ByKeyword extends React.Component {
     if (this.state.items == undefined) {
         alert('Please fill in a value')
     } else {
-    console.log('test')
     console.log(this.state.country)
     let country = this.state.country
     console.log(country)
@@ -55,14 +54,21 @@ class ByKeyword extends React.Component {
   }
   }
 
+  isUndefined = event => {
+    if (this.state.country == '') {
+      console.log('undefined')
+    } else {
+      this.fetchData();
+    }
+
+  }
+
   handleChange = event => {
     const { name, value } = event.target
 
     this.setState({
       [name]: value,
     })
-
-    // document.getElementById('test').blur();
   }
 
   handlesubmit = event => {
@@ -96,7 +102,7 @@ class ByKeyword extends React.Component {
               type="button"
               name="submit"
               value="Retrieve News!"
-              onClick={this.fetchData}
+              onClick={this.isUndefined}
             >
             Retrieve News!
             </button>
@@ -106,13 +112,13 @@ class ByKeyword extends React.Component {
       return (
         <>
         <Heading />
-          <form>
-          <label>Choose a country</label>
+          <form onSubmit={this.submitHandler}>
+          <label>What would you like your news to be about?</label>
             <input
               type="text"
               name="country"
               value={country}
-              onBlur={this.fetchData}
+              onBlur={this.isUndefined}
               onChange={this.handleChange}
               />
               <button
