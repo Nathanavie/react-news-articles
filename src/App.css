@@ -51,6 +51,7 @@ img{
 .articleLink a {
   text-decoration: none;
   color: #000000;
+  overflow-x: auto;
 }
 
 .articleLink {
