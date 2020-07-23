@@ -2,7 +2,7 @@
 This project uses a NewsApi.org API of the latest US news articles from some large news organisations and displays them in a responsive CSS Grid layout
 
 # Getting started
-You can view a live demo over at https://news-by-nathan.netlify.com/
+To view this project, as NewsAPI has now only allowed free access to be used in a development environment, it needs to be run using npm as seen below.
 
 To get the frontend running locally:
 
